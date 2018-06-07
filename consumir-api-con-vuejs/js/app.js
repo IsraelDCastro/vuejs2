@@ -1,4 +1,5 @@
 new Vue({
+	// Indicamos el DIV donde esta nuestra APP Vue
 	el: '#app',
 	data: {
 		usuarios: []
