@@ -36,24 +36,28 @@ new Vue({
 	methods: {
 	//publicar mensaje
 		publicarMensaje: function(quienPublica){
+			// Se coge el mensaje de array asociativo con valor de la llave "quienPublica" ('izquierda' o 'derecha')
 			var mensaje = this.nuevoMensaje[quienPublica];
-
+			
+			// si el mensaje no esta vacio, lo mete dentro del array de mensajes con su contenido, quien lo publica y la fecha del sistema
 			if(mensaje.trim() != ''){
 				this.mensajes.push({
 					contenido: mensaje,
 					posicion: quienPublica,
 					fecha: new Date()
 				});
-
+				// Al que lo publica se le sube el contador de mensajes
 				this.usuarios[quienPublica].mensajesEnviados++;
-
+				
 				this.nuevoMensaje[quienPublica] = '';
+				// Se hace scroll de la conversacion.
 				this.scrollConversacion();
 			}else{
+				// Se cuenta como mensaje vacio
 				this.usuarios[quienPublica].mensajesVacios+=1;
 
 				var mensajesVacios = this.usuarios[quienPublica].mensajesVacios;
-
+				// Si se pasa del limite, se muestra un mensaje de advertencia
 				if(mensajesVacios <= this.limiteMensajesVacios){
 					this.mensajes.push({
 						contenido: [
@@ -69,7 +73,7 @@ new Vue({
 						posicion: 'centro',
 						fecha: new Date()
 					});
-
+					// Se hace scroll tras el mensaje
 					this.scrollConversacion();
 				}
 
@@ -84,8 +88,9 @@ new Vue({
 		},
 	//borrar mensajes y resetear contadores
 		borrar: function(){
+			// Vacia el array de mensajes
 			this.mensajes = [];
-
+			// Pone a 0 los contadores
 			for(var usuario in this.usuarios){
 				if(this.usuarios.hasOwnProperty(usuario)){
 					this.usuarios[usuario].mensajesEnviados = 0;
