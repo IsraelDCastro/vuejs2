@@ -7,5 +7,6 @@ new Vue({
 			'Editor b&aacute;sico con Vue.js',
 			'</div>',
 			'<a href="http://calirojas.com">calirojas.com</a>'].join('')
+			// Se usa join al final para convertir el array en una sola String
 	}
 });

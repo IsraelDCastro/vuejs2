@@ -24,9 +24,11 @@
 					Digite cualquier etiqueta HTML para ver el resultado renderizado
 					a la derecha.
 				</div>
+				<!-- con v-model asociamos el valor del textarea a la la variable codigo -->
 				<textarea cols="30" rows="10" v-model="codigo" class="form-control"></textarea>
 			</div>
 			<div class="col-sm-6">
+				<!-- Mostramos como HTML el contenido de la variable codigo con v-html https://vuejs.org/v2/guide/syntax.html#Raw-HTML -->
 				<div v-html="codigo"></div>
 			</div>
 		</div>
