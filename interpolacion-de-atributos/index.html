@@ -23,6 +23,10 @@
 			<div class="col-sm-12">
 				<div class="panel panel-default">
 					<div class="panel-heading text-right">
+						<!-- enlaza class y disabled del boton con v-bind https://vuejs.org/v2/guide/class-and-style.html
+						de forma que enlaza el pertenecer a la clase btn-lg dependa de que no este activo (false) el valor de "botonesPequenos"
+						y de la forma que el estado disabled dependa del valor de "desactivar"
+						Y con v-on asocia el comportamiento al hacer el evento click https://vuejs.org/v2/guide/events.html -->
 						<button class="btn btn-primary"
 							v-bind:class="{'btn-lg' : !botonesPequenos}"
 							v-on:click="cambiarColor('azul')"
@@ -41,6 +45,7 @@
 							v-bind:disabled="desactivar">Amarillo</button>
 					</div>
 					<div class="panel-body">
+						<!-- Enlaza con bind una clase de pertenencia al valor "colorCaja" -->
 						<div class="panel panel-default col-sm-5" v-bind:class="colorCaja">
 							<div class="panel-body">
 								<p>Esta caja cambia de color cuando se hace click en un bot&oacute;n</p>
@@ -53,13 +58,16 @@
 						</div>
 					</div>
 					<div class="panel-footer text-right">
+						<!-- Define con v-on al hacer click la funcion "cambiar estado de botones" -->
 						<button class="btn btn-default btn-xs" v-on:click="cambiarEstadoBotones">
+						<!-- el texto mostrado depende del valor de la variable "desactivar" -->
 							{{ desactivar ? 'Activar' : 'Desactivar'}}
 							botones
 						</button>
 						<button class="btn btn-default btn-xs" v-on:click="botonesPequenos = !botonesPequenos">
 							Ver botones
 							<strong>
+								<!-- el texto mostrado depende del valor de la variable "botonesPequenos" -->
 								{{ !botonesPequenos ? 'normales' : 'grandes' }}
 							</strong>
 							<em> (excepto &eacute;ste)</em>
