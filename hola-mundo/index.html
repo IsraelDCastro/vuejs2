@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hola mundo con Vue.js</title>
+</head>
+<body>
+	<!-- Contenedor de la aplicacion Vue (el id coincide con el atributo el: '#miApp' de la aplicacion -->
+	<div id="miApp">
+		<!-- Se muestra el valor del mensaje -->
+		<p>{{ message }}</p>
+		<!-- asociamos al evento click del boton el ejecutar la funcion reverseMessage -->
+		<button v-on:click="reverseMessage">Invertir mensaje</button>
+	</div>
+	<!-- Adjuntamos la libreria de Vue 2 -->
+	<script src="https://unpkg.com/vue@2.4.2"></script>
+	<!-- Adjuntamos nuestro Javascript de nuestra aplicación Vue 2 -->
+	<script src="js/app.js"></script>
+</body>
+</html>
