@@ -1,10 +1,6 @@
-/*
-	Svuetify
-	Autor: Cali Rojas
-	Blog: http://calirojas.com
-	GitHub: https://github.com/calirojas/vuejs2
-*/
 
+// Definimos el router y los componentes asociados a cada ruta (Inicio, Artista y NoEncontrado 
+// Mas informacion https://vuejs.org/v2/guide/routing.html
 const router = new VueRouter({
 	routes: [
 		{path: '/', component: Inicio},
@@ -15,6 +11,7 @@ const router = new VueRouter({
 
 const app = new Vue({
 	router,
+	// Mapeamos los datos del json
 	data(){
 		return {
 			artistas: json.artistas,
@@ -26,6 +23,7 @@ const app = new Vue({
 			}
 		}
 	},
+	// Metodo para agregar un nuevo artista (sin discos) 
 	methods: {
 		agregarArtista: function(){
 			this.artistas.push({
@@ -38,6 +36,7 @@ const app = new Vue({
 
 			this.limpiarFormulario();
 		},
+		// Metodo para limpiar el formulario
 		limpiarFormulario: function(){
 			this.nuevoArtista = {
 				imagen: '',
@@ -46,4 +45,5 @@ const app = new Vue({
 			};
 		}
 	}
+	// Indicamos sobre que id se monta la aplicaicon
 }).$mount('#app');

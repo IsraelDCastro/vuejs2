@@ -1,10 +1,5 @@
-/*
-	Svuetify
-	Autor: Cali Rojas
-	Blog: http://calirojas.com
-	GitHub: https://github.com/calirojas/vuejs2
-*/
 
+// Definimos el componente artista
 const Artista = {
 	template: `
 		<div class="c-artistas" v-if="datos">
@@ -59,6 +54,7 @@ const Artista = {
 			datos : {}
 		}
 	},
+	// Este metodo, observa los parametros de la ruta dada con route-link y con ellos sabe que artista es -->
 	methods: {
 		obtenerInfo: function(){
 			var paramArtista = this.$route.params.artista,
@@ -73,9 +69,12 @@ const Artista = {
 			this.datos = consulta;
 		}
 	},
+	// Cuando se crea el objeto, se llama a obtener info
 	created: function(){
 		this.obtenerInfo();
 	},
+	// Watchers: https://vuejs.org/v2/guide/computed.html#Watchers
+	// Si se produce el evento asincrono de cambio de ruta, llama de nuevo a obtener info
 	watch: {
 		'$route': function(newRoute, currentRoute){
 			this.obtenerInfo();

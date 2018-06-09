@@ -1,3 +1,5 @@
+// Modificamos formatMoney de Number para que se comporte como queramos
+
 Number.prototype.formatMoney = function(c, d, t){
 	var n = this,
 		c = isNaN(c = Math.abs(c)) ? 2 : c,
@@ -12,6 +14,7 @@ Number.prototype.formatMoney = function(c, d, t){
 new Vue({
 	el: '#app',
 	data: {
+		// Definimos una coleccion de productos
 		productos: [
 			{
 				'producto': 1,
@@ -64,9 +67,11 @@ new Vue({
 				'precio': '11802.94'
 			}
 		],
+		// definimos un usuario y su contrasenya
 		usuarios: [
-			{usuario: 'calirojas', contrasena: 'cali'}
+			{usuario: 'admin', contrasena: 'admin'}
 		],
+		// Definimos datos de facturacion (vacios)
 		facturacion: {
 			productoSeleccionado: {
 				producto: '',
@@ -74,6 +79,7 @@ new Vue({
 			},
 			productosAgregados: []
 		},
+		// Informacion para controlar el estado del login
 		login: {
 			usuario: '',
 			contrasena: '',
@@ -85,12 +91,18 @@ new Vue({
 		}
 	},
 	methods: {
+		// Funcion que agrega una linea de pedido de un producto
 		agregarLinea: function(){
 			var productoSeleccionado = this.facturacion.productoSeleccionado,
+			// Comprueba si el producto ya existe en productosAgregados
+			// NOTA: En Javascript, find en arrays recibe una función y en ella e1 un elmento del array.
+			// Esta funcion	devuelve el primer elemento en el que dicha funcion retorne true
+			// mas informacion de find https://www.w3schools.com/jsref/jsref_find.asp
+			
 			existe = this.facturacion.productosAgregados.find(function(el){
 				return el.producto == productoSeleccionado.producto;
 			});
-
+			// Si no existe, lo anyade a productosAgregados
 			if(!existe){
 				this.facturacion.productosAgregados.push({
 					producto: productoSeleccionado.producto,
@@ -98,6 +110,7 @@ new Vue({
 					precio: productoSeleccionado.precio,
 					cantidad: productoSeleccionado.cantidad
 				});
+				// Si ya exisitia, busca el producto agregado y modifica su cantidad
 			}else{
 				var lineaFactura = this.facturacion.productosAgregados.find(function(el){
 					if(el.producto == productoSeleccionado.producto){
@@ -109,6 +122,7 @@ new Vue({
 					parseInt(productoSeleccionado.cantidad);
 			}
 		},
+		// Funcion que busca informacion de un producto y la anayade a las caracteristicas del producto seleccionado
 		infoProductoSeleccionado: function(){
 			var producto = this.facturacion.productoSeleccionado.producto;
 
@@ -123,10 +137,12 @@ new Vue({
 				this.facturacion.productoSeleccionado.precio = info.precio;
 			}
 		},
+		// Funcion que elimina una linea de pedido basado en su indice
 		eliminarLinea: function(indice){
 			this.facturacion.productosAgregados.splice(indice, 1);
 
 		},
+		// Funcion para validar si el login es correcto
 		validarUsuario: function(){
 			var login = this.login;
 
@@ -147,6 +163,8 @@ new Vue({
 			}
 		}
 	},
+	// Funciones computed en Vue2 https://vuejs.org/v2/guide/computed.html
+	// Utiles para tratar como variables (aunque es una funcion) y facilitar la claridad en el codigo
 	computed: {
 		totalLineas: function(){
 			var total = 0;

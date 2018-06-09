@@ -17,5 +17,5 @@ Se incluyen
 Los usuarios para realizar el login se encuentran en el código JavaScript, de
 igual forma que la lista de productos. Para desbloquear el "sistema" utilice:
 
-Usuario: calirojas
-Contraseña: cali
+Usuario: admin
+Contraseña: admin

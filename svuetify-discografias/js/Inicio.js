@@ -4,7 +4,7 @@
 	Blog: http://calirojas.com
 	GitHub: https://github.com/calirojas/vuejs2
 */
-
+// Para ruta / , la plantilla de inicio
 const Inicio = {
 	template: `
 		<div class="c-inicio">

@@ -1,4 +1,5 @@
 var json = {
+	// JSON Que describe los artistas y sus discos
 	artistas: [
 		{
 			id: 1,
