@@ -26,5 +26,20 @@ new Vue({
 
 			this.tareas.splice(indice, 1);
 		}
-	}
+	},  
+	// Cuando se crea el Vue, cargamos los datos de localStorage
+	created: function () {
+	  if (localStorage.getItem('tareas')) 
+		this.tareas = JSON.parse(localStorage.getItem('tareas'));
+	},
+	// anyadimos un watcher de tareas. Hacemos que cada cambio se guarde en localStorage
+	// importante poner deep:true para que asi coja los cambios en todas las propiedades anidadas
+	watch: {
+	  tareas: {
+	    handler() {
+	      localStorage.setItem('tareas', JSON.stringify(this.tareas));
+	    },
+	    deep: true,
+	  },
+	},
 });
