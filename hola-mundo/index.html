@@ -11,6 +11,7 @@
 		<p>{{ message }}</p>
 		<!-- asociamos al evento click del boton el ejecutar la funcion reverseMessage -->
 		<button v-on:click="reverseMessage">Invertir mensaje</button>
+		<input type="text" v-model="message" />
 	</div>
 	<!-- Adjuntamos la libreria de Vue 2 -->
 	<script src="https://unpkg.com/vue@2.4.2"></script>
