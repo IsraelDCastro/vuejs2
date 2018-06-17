@@ -6,4 +6,4 @@ Este fork ha sido mejorado  incluyendo mayor detalle en los comentarios respecto
 
 1) Se ha añadido un proyecto básico de iniciación llamado "Hello World".
 2) El proyecto "lista-de-tareas" ahora incorpora persistencia local usando "LocalStorage".
-3) Se ha añadido un proyecto Cordova con el programa "lista-de-tareas". Dicho Ejemplo esta en el proyecto "lista-de-tareas-cordova" y permite ser desplegado sin problemas en Android e IOS, sin necesidad de conexión a Internet.
+3) Se ha añadido un proyecto Cordova con el programa "lista-de-tareas". Dicho Ejemplo esta en el proyecto "lista-de-tareas-cordova" y permite ser desplegado sin problemas en Android e IOS, sin necesidad de conexión a Internet. Se incluye "APK" generado.
