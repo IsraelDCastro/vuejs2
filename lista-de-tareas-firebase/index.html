@@ -86,8 +86,8 @@
 					:title="'Fecha de la tarea: ' + tarea.fecha">
 						<div class="checkbox">
 							<label>
-								<!-- El cambio se hace con un click -->
-								<input type="checkbox" @click="actualizarTarea(tarea)">
+								<!-- El cambio se hace con un click y enlazamos el valor de checked a "tarea.finalizada" -->
+								<input type="checkbox" @click="actualizarTarea(tarea)"  v-bind:checked="tarea.finalizada">
 								<!-- el style y clases de este span depende del valor de la tarea finalizada.
 								Como texto, muesta el nombre de la tarea-->
 								<span :style="[tarea.finalizada ? {textDecoration: 'line-through'} : '']"
