@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Lista de tareas con Vue.js y persistencia en la nube con Firebase</title>
+	<title>Lista de tareas con Vue.js con persistencia en la nube (Usando Firebase)</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/estilos.css">
@@ -14,8 +14,7 @@
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<h3>Uso de m&uacute;ltiples directivas</h3>
-				<h2>Lista de tareas con Vue.js</h2>
-				<p>Desarrollado por <a href="http://calirojas.com">Cali Rojas</a> y ampliado por <a href="https://github.com/sergarb1">sergarb1</a></p>
+				<h2>Lista de tareas con Vue.js con persistencia en la nube (Usando Firebase)</h2>
 				<hr>
 			</div>
 		</div>
@@ -87,8 +86,8 @@
 					:title="'Fecha de la tarea: ' + tarea.fecha">
 						<div class="checkbox">
 							<label>
-								<!-- Se enlaza este checkbox al valor de la propiedad "finalizada" de cada tarea -->
-								<input type="checkbox" v-model="tarea.finalizada">
+								<!-- El cambio se hace con un click -->
+								<input type="checkbox" @click="actualizarTarea(tarea)">
 								<!-- el style y clases de este span depende del valor de la tarea finalizada.
 								Como texto, muesta el nombre de la tarea-->
 								<span :style="[tarea.finalizada ? {textDecoration: 'line-through'} : '']"
@@ -108,7 +107,7 @@
   <!-- Vue -->
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <!-- Firebase -->
-  <script src="https://gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
   <!-- VueFire -->
   <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
 

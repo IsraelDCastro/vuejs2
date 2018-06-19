@@ -42,10 +42,14 @@ new Vue({
 			this.nuevaTarea = '';
 			this.mensajeTareaAgregada = true;
 		},
+		actualizarTarea: function(tarea){
+			// Eliminamos el hijo en la referencia a Firebase
+			tareasRef.child(tarea['.key']).child('finalizada').set(!tarea.finalizada)
+		},
 		eliminarTarea: function(tarea){
 			// Eliminamos el hijo en la referencia a Firebase
 			tareasRef.child(tarea['.key']).remove()
 		}
-	},
+	}
 	
 });
