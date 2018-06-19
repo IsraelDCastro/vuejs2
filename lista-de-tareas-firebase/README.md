@@ -5,6 +5,8 @@ Ejemplo de una lista de tareas creada con Vue.js. Se pueden agregar y eliminar
 elementos de la lista, cambiar el estado de cada una de las tareas (marcar como finalizada),
 validación básica del campo de texto, etc.
 
+Se ha añadido soporte a almacenamiento en la nube usando Firebase (Y para ello se apoya en las bibliotecas Firebase https://firebase.google.com y Vefire https://github.com/vuejs/vuefire ) 
+
 Múltiples mensajes son mostrados en la vista, cuando una u otra condición se cumpla.
 Binding múltiple de clases y atributos.
 
@@ -23,7 +25,6 @@ Se usa:
 - Interpolación
 - Expresiones
 
-Se ha añadido soporte a almacenamiento en la nube usando Firebase
 
 El ejemplo visualmente es básico, pero se utlizan muchas directivas que es importante
 saber utilizar o al menos saber qué es lo que hacen.
