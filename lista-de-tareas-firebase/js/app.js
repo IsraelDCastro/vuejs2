@@ -1,15 +1,22 @@
 // Inicializamos Firebase
 // Configuracion
+// Esta configuración nos la da el propio Firebase al establecer la cuenta.
+// La indicada aqui ES DE EJEMPLO Y DEBE CAMBIARSE
+
 var config = {
     apiKey: "<API_KEY>",
-    authDomain: "lista-de-tareas-firebase.firebaseapp.com",
-    databaseURL: "https://lista-de-tareas-firebase.firebaseio.com",
-    storageBucket: "lista-de-tareas-firebase.appspot.com",
+    authDomain: "mi-app-firebase.firebaseapp.com",
+    databaseURL: "https://mi-app-firebase.firebaseio.com",
+    storageBucket: "mi-app-firebase.appspot.com",
     messagingSenderId: "<SENDER_ID>",
   };
 
-  firebase.initializeApp(config);
+
+// Inicializamos Firebase con la configuracion proporcionada en la variable anterior
+firebase.initializeApp(config);
+// Obtenemos la referencia a la base de datos
 var db = firebase.database();
+
 // Seleccionamos la parte de la base de datos de la que queremos la referencia
 var tareasRef = db.ref('tareas');
 
@@ -22,7 +29,10 @@ new Vue({
 		nuevaTarea: '',
 		mensajeTareaAgregada: false
 	},
-	// Con Vuefire enlazamos tarea (para mostrar) a la referencia de la base de datos en Firebird
+	// Esta parte es para la biblioteca Vuefire.
+	//Con Vuefire enlazamos tarea (para mostrar) a la referencia de la base de datos en Firebird
+	// Asi conseguimos que ambas esten enlazadas y cuando modifiquemos la remota (tareasRef),
+	// se modifique la local y su aspecto (tareas) 
 	firebase: {
 		tareas:tareasRef
 	}
