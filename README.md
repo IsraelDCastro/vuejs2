@@ -8,3 +8,9 @@ Este fork ha sido mejorado  incluyendo mayor detalle en los comentarios respecto
 2) El proyecto "lista-de-tareas" ahora incorpora persistencia local usando "LocalStorage".
 3) Se ha añadido un proyecto Cordova con el programa "lista-de-tareas". Dicho Ejemplo esta en el proyecto "lista-de-tareas-cordova" y permite ser desplegado sin problemas en Android e IOS, sin necesidad de conexión a Internet. Se incluye "APK" generado.
 4) Se ha añadido un proyecto "lista-de-tareas-firebase" que usando Firebase (Y para ello se apoya en las bibliotecas Firebase https://firebase.google.com y Vefire https://github.com/vuejs/vuefire ) permite persistencia en la nube.
+
+# Hashtags
+
+```
+#FpInfor #Programación #DAW #DWEC 
+```
